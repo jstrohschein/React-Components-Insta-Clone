@@ -33,7 +33,21 @@ const App = () => {
         - otherwise just return the post object unchanged.
      */
 
+    return setPosts(
+      posts.map((post) => {
+        //function to spread newpost into the data
+        let addNewPost = (newPost) => [...posts, { ...newPost }];
 
+        if (post.id === postId) {
+          post.likes += post.likes + 1
+          return addNewPost(post);
+        }
+
+        else {
+          return post;
+        }
+      })
+    );
   };
 
   return (
