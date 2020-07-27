@@ -22,6 +22,26 @@ const App = () => {
   // To make the search bar work (which is stretch) we'd need another state to hold the search term.
 
   const likePost = (postId) => {
+
+    return (
+
+      setPosts(posts.map(post => {
+
+        if (post.id === postId) {
+
+          return post.likes + 1
+
+        }
+
+        else {
+
+          return post
+
+        }
+
+      }))
+
+    )
     /*
       This function serves the purpose of increasing the number of likes by one, of the post with a given id.
       The state of the app lives at the top of the React tree, but it wouldn't be fair for nested components not to be able to change state!
@@ -33,22 +53,24 @@ const App = () => {
         - otherwise just return the post object unchanged.
      */
 
-    return setPosts(
-      posts.map((post) => {
-        //function to spread newpost into the data
-        let addNewPost = (newPost) => [...posts, { ...newPost }];
+    /*const likePost = (postId) => setPosts(posts.map(post => {
 
-        if (post.id === postId) {
-          post.likes += post.likes + 1
-          return addNewPost(post);
-        }
+      if (post.id === postId) {
+        return post.likes + 1
+      }
+    })*/
 
-        else {
-          return post;
-        }
-      })
-    );
-  };
+
+
+
+
+
+
+
+
+
+
+  };//end likePost
 
   return (
     <div className="App">
