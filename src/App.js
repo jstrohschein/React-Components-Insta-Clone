@@ -23,24 +23,17 @@ const App = () => {
 
   const likePost = (postId) => {
 
-    return (
-
-      setPosts(posts.map(post => {
-
-        if (post.id === postId) {
-
-          return post.likes + 1
-
+    console.log('postId: ', postId)
+    return setPosts(
+      posts.map(post => {
+        if(post.id === postId){
+          return {...post, likes: post.likes + 1}
         }
-
-        else {
-
+        
+        else{
           return post
-
         }
-
-      }))
-
+      })
     )
     /*
       This function serves the purpose of increasing the number of likes by one, of the post with a given id.
@@ -53,12 +46,9 @@ const App = () => {
         - otherwise just return the post object unchanged.
      */
 
-    /*const likePost = (postId) => setPosts(posts.map(post => {
-
-      if (post.id === postId) {
-        return post.likes + 1
-      }
-    })*/
+    
+     
+    
 
 
 

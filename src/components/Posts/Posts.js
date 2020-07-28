@@ -7,7 +7,7 @@ const Posts = (props) => {
   const { likePost, posts } = props;
 
 
-
+  console.log(posts)
   return (
     <div className='posts-container-wrapper'>
       {/* Map through the posts array returning a Post component at each iteration */}
